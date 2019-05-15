@@ -1,5 +1,10 @@
-
-
+body {
+  margin: 0;
+}
+span {
+  display: inline-block;
+  width: 65px;
+}
 .wrapper {
     display: grid;
     grid-row-gap: 25px;

@@ -57,7 +57,7 @@ var secFunction = function() {
       i = i - 60;
     }
   } , 1000);
-      
+     
   };
 
   var minFunction = function() {
@@ -81,3 +81,7 @@ var secFunction = function() {
 start.addEventListener('click', secFunction, {once : true} );
 start.addEventListener('click', minFunction, {once : true} );
 start.addEventListener('click', msFunction, {once : true} );
+
+end.addEventListener('click', function() {
+  clearInterval();
+}); 
