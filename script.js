@@ -26,9 +26,19 @@ var start = document.querySelector('.buttonStart');
 
 var end = document.querySelector('.buttonEnd');
 
+var wath = document.querySelector('.watch');
+
+var endClickCounter = 0;
+
+var nIntervId;
+
+var nIntervId2;
+
+var nIntervId3;
+
 var msFunction = function() {
   var i = 0;
-  setInterval(function() {
+  nIntervId = setInterval(function() {
   if ( i <= 8 ) {
     i += 1;
     ms.textContent = '0' + i;
@@ -45,7 +55,7 @@ var msFunction = function() {
 
 var secFunction = function() {
   var i = 0;
-  setInterval(function() { 
+  nIntervId2 = setInterval(function() { 
      if ( i <= 8 ) {
     i += 1;
     sec.textContent = '0' + i;
@@ -62,7 +72,7 @@ var secFunction = function() {
 
   var minFunction = function() {
     var i = 0;
-    setInterval(function() { 
+    nIntervId3 = setInterval(function() { 
       if ( i <= 8 ) {
     i += 1;
     min.textContent = '0' + i;
@@ -78,10 +88,26 @@ var secFunction = function() {
         
     };
 
+var hhh = function() {
+  console.log( endClickCounter );
+  endClickCounter = 1;
+  console.log( endClickCounter );
+};
+
 start.addEventListener('click', secFunction, {once : true} );
 start.addEventListener('click', minFunction, {once : true} );
 start.addEventListener('click', msFunction, {once : true} );
 
+end.addEventListener('click', hhh, {once : true});
+
 end.addEventListener('click', function() {
-  clearInterval();
-}); 
+  clearInterval(nIntervId), {once : true}; 
+  clearInterval(nIntervId2), {once : true};
+  clearInterval(nIntervId3), {once : true};
+});
+
+
+
+wath.addEventListener('click', function() {
+  console.log( endClickCounter );
+});
