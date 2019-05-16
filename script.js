@@ -26,8 +26,6 @@ var start = document.querySelector('.buttonStart');
 
 var end = document.querySelector('.buttonEnd');
 
-var wath = document.querySelector('.watch');
-
 var endClickCounter = 0;
 
 var nIntervId;
@@ -50,7 +48,7 @@ var msFunction = function() {
       i = i - 60;
     }
   } , 16);
-
+  start.removeEventListener('click', msFunction);
   };
 
 var secFunction = function() {
@@ -67,7 +65,7 @@ var secFunction = function() {
       i = i - 60;
     }
   } , 1000);
-     
+  start.removeEventListener('click', secFunction); 
   };
 
   var minFunction = function() {
@@ -85,29 +83,47 @@ var secFunction = function() {
     }
       
     } , 60000);
-        
+    start.removeEventListener('click', minFunction);  
     };
 
 var hhh = function() {
-  console.log( endClickCounter );
-  endClickCounter = 1;
+  if (endClickCounter == 1) {
+    endClickCounter = 0;
+  }
+  if (endClickCounter == 0) {
+    endClickCounter = 1;
+  }
+  
   console.log( endClickCounter );
 };
 
-start.addEventListener('click', secFunction, {once : true} );
-start.addEventListener('click', minFunction, {once : true} );
-start.addEventListener('click', msFunction, {once : true} );
+start.addEventListener('click', function() { 
+  if (endClickCounter == 1) {
+    min.textContent = '00';
+    sec.textContent = '00';
+    ms.textContent = '00';
+    endClickCounter = 0 ;
+  }
+  console.log( endClickCounter );
+  });
+start.addEventListener('click', secFunction);
+start.addEventListener('click', minFunction);
+start.addEventListener('click', msFunction);
 
-end.addEventListener('click', hhh, {once : true});
+end.addEventListener('click', hhh);
+end.addEventListener('click', function() { start.addEventListener('click', secFunction); } );
+end.addEventListener('click', function() { start.addEventListener('click', minFunction); } );
+end.addEventListener('click', function() { start.addEventListener('click', msFunction); } );
 
 end.addEventListener('click', function() {
   clearInterval(nIntervId), {once : true}; 
   clearInterval(nIntervId2), {once : true};
   clearInterval(nIntervId3), {once : true};
+  
 });
 
-
-
-wath.addEventListener('click', function() {
-  console.log( endClickCounter );
-});
+// if (endClickCounter == 1) {
+//   end.addEventListener('click',
+//     msFunction
+//   );
+// }
