@@ -8,8 +8,8 @@ span {
 .wrapper {
     display: grid;
     grid-row-gap: 25px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows:  1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:  1fr 1fr ;
     justify-items: center;
     width: 350px;
     margin: 80px auto;
@@ -21,7 +21,7 @@ span {
     background: #111;
     font-family: 'Helvetica', 'Arial', sans-serif;
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 4;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,11 +33,15 @@ span {
 }
 
 .buttonStart {
-    margin-right: 59px;
+   color:greenyellow;
 }
 
 .buttonEnd {
-    margin-left: 61px;
+  color: rgb(248, 93, 93);
+}
+
+.buttonReset {
+  color: rgb(65, 131, 255);
 }
 
 .bubbly-button {
@@ -49,7 +53,6 @@ span {
   -webkit-appearance: none;
   appearance: none;
   background-color: #000;
-  color: #fff;
   border-radius: 4px;
   border: none;
   cursor: pointer;

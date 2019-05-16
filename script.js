@@ -26,6 +26,8 @@ var start = document.querySelector('.buttonStart');
 
 var end = document.querySelector('.buttonEnd');
 
+var res = document.querySelector('.buttonReset');
+
 var endClickCounter = 0;
 
 var nIntervId;
@@ -97,7 +99,24 @@ var hhh = function() {
   console.log( endClickCounter );
 };
 
-start.addEventListener('click', function() { 
+start.addEventListener('click', secFunction);
+start.addEventListener('click', minFunction);
+start.addEventListener('click', msFunction);
+
+end.addEventListener('click', hhh);
+end.addEventListener('click', function() {
+  clearInterval(nIntervId), {once : true}; 
+  clearInterval(nIntervId2), {once : true};
+  clearInterval(nIntervId3), {once : true};
+  
+});
+
+res.addEventListener('click', function() { if (endClickCounter == 1) { start.addEventListener('click', secFunction);} });
+res.addEventListener('click', function() { if (endClickCounter == 1) { start.addEventListener('click', minFunction);} });
+res.addEventListener('click', function() { if (endClickCounter == 1) { start.addEventListener('click', msFunction);} });
+
+res.addEventListener('click', function() { 
+  
   if (endClickCounter == 1) {
     min.textContent = '00';
     sec.textContent = '00';
@@ -106,24 +125,7 @@ start.addEventListener('click', function() {
   }
   console.log( endClickCounter );
   });
-start.addEventListener('click', secFunction);
-start.addEventListener('click', minFunction);
-start.addEventListener('click', msFunction);
 
-end.addEventListener('click', hhh);
-end.addEventListener('click', function() { start.addEventListener('click', secFunction); } );
-end.addEventListener('click', function() { start.addEventListener('click', minFunction); } );
-end.addEventListener('click', function() { start.addEventListener('click', msFunction); } );
 
-end.addEventListener('click', function() {
-  clearInterval(nIntervId), {once : true}; 
-  clearInterval(nIntervId2), {once : true};
-  clearInterval(nIntervId3), {once : true};
-  
-});
 
-// if (endClickCounter == 1) {
-//   end.addEventListener('click',
-//     msFunction
-//   );
-// }
+
