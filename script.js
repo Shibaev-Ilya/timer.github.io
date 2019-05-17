@@ -28,6 +28,8 @@ var end = document.querySelector('.buttonEnd');
 
 var res = document.querySelector('.buttonReset');
 
+var add = document.querySelector('.addCalc');
+
 var endClickCounter = 0;
 
 var nIntervId;
@@ -127,5 +129,5 @@ res.addEventListener('click', function() {
   });
 
 
-
+  add.addEventListener('click', function() { document.querySelector('body').appendChild( document.querySelector('.wrapper').cloneNode(true)) });
 

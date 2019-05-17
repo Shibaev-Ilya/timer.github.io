@@ -1,9 +1,21 @@
 body {
   margin: 0;
+  position: relative;
 }
 span {
   display: inline-block;
   width: 65px;
+}
+
+.addCalc {
+  position: fixed;
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  border: 1px solid #111;
+  padding: 10px;
+  left: 30%;
+  top: 10px;
 }
 .wrapper {
     display: grid;
@@ -14,6 +26,8 @@ span {
     width: 350px;
     margin: 80px auto;
     padding-top: 20px;
+    
+    animation: zoomInDown ease-in-out 1.5s forwards;
 }
 
 .watch { 
@@ -29,7 +43,6 @@ span {
     color: #fff;
     border-radius: 5px;
     letter-spacing: 3px;
-    animation: zoomInDown ease-in-out 1.5s forwards;
 }
 
 .buttonStart {
