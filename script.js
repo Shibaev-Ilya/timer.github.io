@@ -129,5 +129,5 @@ res.addEventListener('click', function() {
   });
 
 
-  add.addEventListener('click', function() { document.querySelector('body').appendChild( document.querySelector('.wrapper').cloneNode(true)) });
+  add.addEventListener('click', function() {});
 

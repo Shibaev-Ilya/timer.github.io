@@ -1,0 +1,25 @@
+{
+  "name": "withgulp",
+  "version": "1.0.0",
+  "description": "Крутой секундомер",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shibaev-Ilya/timer.github.io.git"
+  },
+  "author": "is",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shibaev-Ilya/timer.github.io/issues"
+  },
+  "homepage": "https://github.com/Shibaev-Ilya/timer.github.io#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
