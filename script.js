@@ -3,7 +3,7 @@ var animateButton = function(e) {
   e.preventDefault;
   //reset animation
   e.target.classList.remove('animate');
-  
+
   e.target.classList.add('animate');
   setTimeout(function(){
     e.target.classList.remove('animate');
@@ -55,7 +55,7 @@ var msFunction = function() {
 
 var secFunction = function() {
   var i = 0;
-  nIntervId2 = setInterval(function() { 
+  nIntervId2 = setInterval(function() {
      if ( i <= 8 ) {
     i += 1;
     sec.textContent = '0' + i;
@@ -67,12 +67,12 @@ var secFunction = function() {
       i = i - 60;
     }
   } , 1000);
-  start.removeEventListener('click', secFunction); 
+  start.removeEventListener('click', secFunction);
   };
 
   var minFunction = function() {
     var i = 0;
-    nIntervId3 = setInterval(function() { 
+    nIntervId3 = setInterval(function() {
       if ( i <= 8 ) {
     i += 1;
     min.textContent = '0' + i;
@@ -83,9 +83,9 @@ var secFunction = function() {
     if ( i > 58) {
       i = i - 60;
     }
-      
+
     } , 60000);
-    start.removeEventListener('click', minFunction);  
+    start.removeEventListener('click', minFunction);
     };
 
 var hhh = function() {
@@ -95,7 +95,7 @@ var hhh = function() {
   if (endClickCounter == 0) {
     endClickCounter = 1;
   }
-  
+
   console.log( endClickCounter );
 };
 
@@ -105,18 +105,18 @@ start.addEventListener('click', msFunction);
 
 end.addEventListener('click', hhh);
 end.addEventListener('click', function() {
-  clearInterval(nIntervId), {once : true}; 
+  clearInterval(nIntervId), {once : true};
   clearInterval(nIntervId2), {once : true};
   clearInterval(nIntervId3), {once : true};
-  
+
 });
 
 res.addEventListener('click', function() { if (endClickCounter == 1) { start.addEventListener('click', secFunction);} });
 res.addEventListener('click', function() { if (endClickCounter == 1) { start.addEventListener('click', minFunction);} });
 res.addEventListener('click', function() { if (endClickCounter == 1) { start.addEventListener('click', msFunction);} });
 
-res.addEventListener('click', function() { 
-  
+res.addEventListener('click', function() {
+
   if (endClickCounter == 1) {
     min.textContent = '00';
     sec.textContent = '00';
@@ -126,10 +126,8 @@ res.addEventListener('click', function() {
   console.log( endClickCounter );
   });
 
-
-<<<<<<< HEAD
   add.addEventListener('click', function() {});
-=======
-  // add.addEventListener('click', function() { document.querySelector('body').appendChild( document.querySelector('.wrapper').cloneNode(true)) });
->>>>>>> 11973e8277fd922dccfba19819e900b99647d0e4
+
+  add.addEventListener('click', function() { document.querySelector('body').appendChild( document.querySelector('.wrapper').cloneNode(true)) });
+
 
